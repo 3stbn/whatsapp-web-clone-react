@@ -5,7 +5,7 @@ export default function MessagesBox({ messages }) {
     const endDiv = useRef(null)
     useEffect(() => {
         endDiv.current.scrollIntoView()
-    })
+    }, [messages])
 
     return (
         <div className="chats">

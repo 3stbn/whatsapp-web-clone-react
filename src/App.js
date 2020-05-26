@@ -37,11 +37,6 @@ function App() {
         setMessage('')
     }
 
-    function handleSearch(input) {
-        console.log(input)
-        setSearch(input)
-        filterContacts(data, input)
-    }
     function filterContacts(data, search) {
         const result = data.filter(({ contact }) => {
             return !search || contact.name.toLowerCase().includes(search.toLowerCase())
@@ -55,7 +50,7 @@ function App() {
                 <header>
                     <Avatar user={mainUser} />
                 </header>
-                <Search search={search} handleSearch={handleSearch} />
+                <Search search={search} setSearch={setSearch} />
                 <div className="contact-boxes">
                     {filteredContacts.map(({ contact, messages }) => (
                         <ContactBox
